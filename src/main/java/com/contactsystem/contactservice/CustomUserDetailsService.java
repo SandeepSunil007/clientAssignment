@@ -20,7 +20,6 @@ public class CustomUserDetailsService implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Contacts user = repository.findByFirstName(username);
 		
-		return new org.springframework.security.core.userdetails.User(user.getFirstName(), user.getPassword(),
-				new ArrayList<>());
+		return new MyUserDetails(user);
 	}
 }

@@ -28,7 +28,7 @@ import com.contactsystem.entity.Contacts;
 import com.contactsystem.utility.JwtUtil;
 
 @RestController
-@RequestMapping("api/contact")
+@RequestMapping("/api/contact")
 public class ContactController {
 
 	@Autowired

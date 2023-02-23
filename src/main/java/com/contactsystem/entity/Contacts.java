@@ -22,17 +22,14 @@ public class Contacts {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@NotBlank(message = "firstname is manditory")
 	private String firstName;
 	
-	@NotBlank(message = "lastname is manditory")
 	private String lastName;
 	
-	@Email(message = "email is manditory")
 	private String email;
 	
-	@NotBlank(message = "phonenumber is manditory")
 	private String phoneNumber;
 	
 	private String password;
+	private String roles;
 }

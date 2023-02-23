@@ -18,6 +18,6 @@ public interface ContactsDetailsRepository extends JpaRepository<Contacts, Integ
 	@Query("SELECT b FROM Contacts b  WHERE " + "b.email LIKE CONCAT('%', :email, '%')")
 	List<Contacts> searchContactemail(String email);
 	
-	public Contacts findByFirstName( String firstName);
+	public Contacts findByFirstName(String firstName);
 	
 }
