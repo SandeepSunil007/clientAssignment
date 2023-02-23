@@ -25,7 +25,8 @@ public class ContactDetailsServiceImplementation implements ContactDetailsServic
 		Contacts contact = Contacts.builder().firstName(contactRequest.getFirstName())
 				.lastName(contactRequest.getLastName()).email(contactRequest.getEmail())
 				.phoneNumber(contactRequest.getPhoneNumber())
-				.password(contactRequest.getPassword()).build();
+				.password(contactRequest.getPassword())
+				.roles(contactRequest.getRoles()).build();
 		contactDetailsRepository.save(contact);
 		return contact;
 	}

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -39,7 +40,7 @@ public class ContactController {
 	private AuthenticationManager authenticationManager;
 
 	@Autowired
-	private CustomUserDetailsService customUserDetailsService;
+	private UserDetailsService customUserDetailsService;
 
 	@PostMapping("/addContact")
 	public ResponseEntity<ContactBodyResponse> addContactData(@RequestBody ContactDetailsRequest contactRequest) {
@@ -56,6 +57,7 @@ public class ContactController {
 
 	}
 
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@GetMapping("/getAllContacts")
 	public ResponseEntity<ContactBodyResponse> getAllDataFromDB() {
 		List<Contacts> allContactsDetails = contactService.getAllContactsDetails();

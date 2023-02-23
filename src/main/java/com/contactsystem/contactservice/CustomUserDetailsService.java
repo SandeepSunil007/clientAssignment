@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.contactsystem.contactrepository.ContactsDetailsRepository;
 import com.contactsystem.entity.Contacts;
 
-import java.util.ArrayList;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
